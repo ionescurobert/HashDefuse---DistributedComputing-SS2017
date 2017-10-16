@@ -1,0 +1,27 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 100%;
+    width: auto;
+}
+.App-header {
+    background-image: url(../Images/App-Header.jpg);
+    background-size: cover;
+    height: 10%;
+    padding: 2%;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.submitContainer {
+    padding-left: 20%;
+    padding-right: 20%;
+}
