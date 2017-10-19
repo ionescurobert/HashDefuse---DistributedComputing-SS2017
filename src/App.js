@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import hashDefuselogo from '../Images/hashDefuse_logo.svg';
-import '../Stylesheets/App.css';
+import hashDefuselogo from './Images/hashDefuse_logo.svg';
 
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 
 class App extends Component {
+
     render() {
         return (
             <div className="App">

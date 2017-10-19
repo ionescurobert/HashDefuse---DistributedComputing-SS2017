@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "hashDefuse App",
+  "name": "Defusing MD5 hash values",
   "icons": [
     {
       "src": "favicon.ico",

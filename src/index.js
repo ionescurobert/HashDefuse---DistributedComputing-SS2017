@@ -7,21 +7,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-import App from './App/Components/App'
-import About from './App/Components/About'
-import SubmitHash from './App/Components/SubmitHash'
+import App from './App'
+import About from './About'
+import SubmitHash from './SubmitHash'
 
-// Setup basic express server
-var express = require('express');
-var app = express();
-var path = require('path');
-var server = require('http').createServer(app);
-var io = require('../..')(server);
-var port = process.env.PORT || 3000;
-
-server.listen(port, function () {
-    console.log('Server listening at port %d', port);
-});
 
 ReactDOM.render(
     <BrowserRouter>

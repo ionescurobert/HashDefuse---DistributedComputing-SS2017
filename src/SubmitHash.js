@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import '../Stylesheets/App.css';
+import './App.css';
+import { subscribeToTimer } from "./Api";
 
 
 class SubmitHash extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {value: '', timestamp: 'undefined'};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        subscribeToTimer((err, timestamp) => this.setState({
+            timestamp
+        }));
 
     }
 
@@ -25,7 +30,6 @@ class SubmitHash extends Component {
         }
 
         if (hash.length === 3) {
-
         }
 
         else {
@@ -59,6 +63,9 @@ class SubmitHash extends Component {
                                 </div>
 
                             </form>
+                            <p>
+                                This is the timer value got from a WebSocket: {this.state.timestamp}
+                            </p>
                         </div>
                     </div>
             </div>
