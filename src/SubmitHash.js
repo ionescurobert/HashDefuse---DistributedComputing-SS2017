@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import { subscribeToTimer } from "./Api";
+import { sendHash } from "./Api";
 
 
 class SubmitHash extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: '', timestamp: 'undefined'};
+        this.state = {value: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        subscribeToTimer((err, timestamp) => this.setState({
-            timestamp
-        }));
 
     }
 
@@ -29,7 +26,8 @@ class SubmitHash extends Component {
             this.refs.hashTextField.focus();
         }
 
-        if (hash.length === 3) {
+        if (hash.length === 32) {
+            sendHash(this.state.value);
         }
 
         else {
@@ -58,14 +56,10 @@ class SubmitHash extends Component {
                                     </div>
                                     <div className="col-xs-6">
                                         <p>Supported: </p>
-                                        <p> [*] MD5</p>
+                                        <p> [*] MD5 (Demo: 4ffe35db90d94c6041fb8ddf7b44df29)</p>
                                     </div>
                                 </div>
-
                             </form>
-                            <p>
-                                This is the timer value got from a WebSocket: {this.state.timestamp}
-                            </p>
                         </div>
                     </div>
             </div>

@@ -1,11 +1,10 @@
 const io = require('socket.io')();
+const mqAPI = require('./mqAPI');
 
 io.on('connection', (client) => {
-    client.on('subscribeToTimer', (interval) => {
-        console.log('client is subscribing to timer with interval ', interval);
-        setInterval(() => {
-            client.emit('timer',Math.floor((Math.random() * 10) + 1));
-        }, interval);
+    client.on('sendHash', (hashvalue) => {
+        console.log('Client -> Server: ', hashvalue);
+        mqAPI(hashvalue);
     });
 });
 
