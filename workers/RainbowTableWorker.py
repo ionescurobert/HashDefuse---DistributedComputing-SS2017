@@ -1,21 +1,25 @@
-import time
-
+###################################
+# Author: Robert Ionescu
+# Version: 0.1
+###################################
 
 def search(hash):
     with open("md5.txt") as file:
         print("Searching in rainbow table...")
         for line in file:
-            print("Searching for " + hash)
-            time.sleep(1)
             if hash in line:
-                return True
+                result = line.split(";")
+                return result[-1]
+        return 1
 
 
 def main(hash_value):
-    if search(hash_value) is True:
-        print("yep")
+    result = search(hash_value)
+
+    if result == 1:
+        return 1
     else:
-        print("nope")
+        return result
 
 
 if __name__ == '__main__':
