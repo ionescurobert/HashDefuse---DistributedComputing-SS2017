@@ -3,6 +3,7 @@
 # Version: 0.1
 ###################################
 
+
 def search(hash):
     with open("md5.txt") as file:
         print("Searching in rainbow table...")

@@ -4,7 +4,7 @@ const mqAPI = require('./mqAPI');
 io.on('connection', (client) => {
     client.on('sendHash', (hashvalue) => {
         console.log('Client -> Server: ', hashvalue);
-        mqAPI(hashvalue);
+        mqAPI.sendValue(hashvalue);
     });
 });
 

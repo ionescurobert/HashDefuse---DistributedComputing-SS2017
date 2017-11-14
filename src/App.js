@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import hashDefuselogo from './Images/hashDefuse_logo.svg';
 
-import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap';
 
 class App extends Component {
 
@@ -18,7 +18,7 @@ class App extends Component {
                         <NavItem eventKey={1} href="/">Home</NavItem>
                         <NavDropdown eventKey={2} title="Actions" id="basic-nav-dropdown">
                             <MenuItem eventKey={2.1} href="/submithash">Submit hash</MenuItem>
-                            <MenuItem eventKey={2.2}>Get Status</MenuItem>
+                            <MenuItem eventKey={2.2}>Browse Database</MenuItem>
                             <MenuItem divider />
                             <MenuItem eventKey={2.3}>More</MenuItem>
                         </NavDropdown>
